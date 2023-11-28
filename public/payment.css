@@ -1,0 +1,393 @@
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.topup{
+  height: 100px;
+  width: 100%;
+
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+/* Top */
+
+.topL {
+  cursor: pointer;
+  display: flex;
+  margin-right: auto;
+  
+}
+.topL li {
+  display: inline-block;
+  padding: 0px 50px;
+  margin: auto;
+ 
+}
+.topL li a {
+  transition: all 0.3s ease 0s;
+  text-align: center;
+  display: block;
+  
+  
+  
+}
+.topR{
+  
+  display: inline block;
+  margin: 0%;
+  align-items: center;
+  /* margin: auto ;font
+  margin-left: 1090px;
+  margin-bottom: 80px;
+  margin-top: 10px; */
+  
+}
+
+.topR li{
+ 
+  display: inline-block;
+  padding: 0px 20px;
+  
+
+}
+
+
+
+.topL li a:hover {
+  color: #5d8dd1;
+  text-decoration: none;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
+
+/* Header */
+
+
+
+header .under {
+  background-color: #E3E7E8;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+ margin: auto;
+  
+ 
+
+
+}
+
+
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin-right: 1%;
+  
+
+  
+  
+}
+
+nav {
+  display: flex;
+  height: 80px;
+  background-color: #0249ae ;
+  }
+  
+  svg.TopRegis {
+     width: 27px;
+      fill: #ffffff;
+      display: flex;
+  
+  }
+  
+  
+  button.cart {
+      
+      background: none;
+      border: none;
+      
+  }
+  button.cart:hover svg.TopRegis{
+      fill: #5d8dd1;
+      cursor: pointer;
+      transition: 0.3s ease 0s;
+      
+    
+  }
+
+
+
+
+
+button.gg {
+  background-color: #0070c9;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  display: flex;
+
+}
+
+
+button.gg:hover{
+  background-color: #005fba;
+}
+
+/* ################################### cart */
+body{
+  background-color: #E3E7E8;
+  font-family: system-ui;
+}
+.containerC{
+  width: 1000px;
+  margin: auto;
+  transition: 0.5s;
+}
+
+header .shopping{
+  position: relative;
+  text-align: right;
+}
+header .shopping img{
+  width: 40px;
+}
+header .shopping span{
+  background: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: absolute;
+  top: 13px;
+  left: 80%;
+  padding: 3px 10px;
+}
+.list{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+  margin-top: 50px;
+}
+.list .item{
+  text-align: center;
+  background-color: #DCE0E1;
+  padding: 20px;
+  box-shadow: 0 50px 50px #757676;
+  letter-spacing: 1px;
+}
+.list .item img{
+  width: 90%;
+}
+.list .item .title{
+  font-weight: 600;
+}
+.list .item .price{
+  margin: 10px;
+}
+.list .item button{
+  background-color: #1C1F25;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+}
+.carder{
+  position: fixed;
+  top:0;
+  left: 100%;
+  width: 500px;
+  background-color: #453E3B;
+  height: 100vh;
+  transition: 0.5s;
+}
+.active .carder{
+  left: calc(100% - 500px);
+}
+.active .containerC{
+ transform: translateX(-200px);
+}
+.carder h1{
+  color: #e9e9e9;
+  font-weight: 100;
+  margin: 0;
+  padding: 0 20px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.carder .checkOut{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+}
+.carder .checkOut div{
+  background-color: #1c5fbd;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+.carder .checkOut div:nth-child(2){
+  background-color: #1C1F25;
+  color: #fff;
+}
+.listCard li{
+  display: grid;
+  grid-template-columns: 100px repeat(3, 1fr);
+  color: #fff;
+  row-gap: 10px;
+}
+.listCard li div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.listCard li img{
+  width: 90%;
+}
+.listCard li button{
+  background-color: #fff5;
+  border: none;
+}
+.listCard .count{
+  margin: 0 10px;
+}
+
+/* Main */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:25px;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #5e9be0 60%, #5e9be0 40.1%);
+}
+
+.container form{
+  padding:20px;
+  width:700px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  margin-bottom: 100px;
+}
+
+.container form .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+}
+
+.container form .row .col{
+  flex:1 1 250px;
+}
+
+.container form .row .col .title{
+  font-size: 20px;
+  color:#333;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.container form .row .col .inputBox{
+  margin:15px 0;
+}
+
+.container form .row .col .inputBox span{
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container form .row .col .inputBox input{
+  width: 100%;
+  border:1px solid #ccc;
+  padding:10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.container form .row .col .inputBox input:focus{
+  border:1px solid #000;
+}
+
+.container form .row .col .flex{
+  display: flex;
+  gap:15px;
+}
+
+.container form .row .col .flex .inputBox{
+  margin-top: 5px;
+}
+
+.container form .row .col .inputBox img{
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000);
+}
+
+.container form .submit-btn{
+  width: 100%;
+  padding:12px;
+  font-size: 17px;
+  background: #27ae60;
+  color:#fff;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.container form .submit-btn:hover{
+  background: #2ecc71;
+}

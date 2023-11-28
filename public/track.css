@@ -1,0 +1,17 @@
+h1 {
+    font-size: 2em;
+    text-align: center;
+  }
+  
+  p {
+    font-size: 1.2em;
+  }
+  
+  #flight-number {
+    font-weight: bold;
+  }
+  
+  #departure-time, #arrival-time {
+    font-style: italic;
+  }
+  

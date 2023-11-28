@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flight Ticket</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		.ticket {
+			border: 2px solid black;
+			border-radius: 10px;
+			padding: 20px;
+			max-width: 600px;
+			margin: 0 auto;
+			box-shadow: 0 0 10px rgba(0,0,0,0.3);
+		}
+		h1, h2 {
+			margin: 0;
+			text-align: center;
+		}
+		h1 {
+			font-size: 28px;
+			margin-bottom: 10px;
+		}
+		h2 {
+			font-size: 22px;
+			margin-top: 5px;
+		}
+		.info {
+			margin-top: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.label {
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+		.value {
+			font-size: 18px;
+		}
+	</style>
+</head>
+<body>
+	<div class="ticket">
+		<h1>Flight Ticket</h1>
+		<h2>Flight Details</h2>
+		<div class="info">
+			<div>
+				<span class="label">From: </span>
+				<span class="value">New York City</span>
+			</div>
+			<div>
+				<span class="label">To: </span>
+				<span class="value">Los Angeles</span>
+			</div>
+			<div>
+				<span class="label">Date: </span>
+				<span class="value">2023-04-30</span>
+			</div>
+			<div>
+				<span class="label">Time: </span>
+				<span class="value">08:00 AM</span>
+			</div>
+		</div>
+		<h2>Passenger Details</h2>
+		<div class="info">
+			<div>
+				<span class="label">Name: </span>
+				<span class="value">John Doe</span>
+			</div>
+			<div>
+				<span class="label">Seat: </span>
+				<span class="value">A12</span>
+			</div>
+			<div>
+				<span class="label">Class: </span>
+				<span class="value">Economy</span>
+			</div>
+			<div>
+				<span class="label">Price: </span>
+				<span class="value">$250</span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
