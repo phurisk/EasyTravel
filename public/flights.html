@@ -1,117 +1,150 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="th">
 <head>
-	<title>Easy Tralvel</title>
-	<link rel="icon" type="image/x-icon" href="pic/logo.jpg">
-	<link rel="stylesheet" type="text/css" href="flights.css">
-	
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เที่ยวบิน - EasyTravel</title>
+    <link rel="icon" type="image/x-icon" href="pic/logo.jpg">
+    <link rel="stylesheet" type="text/css" href="flights.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="./pic/logo2.jpg" alt="EasyTravel Logo" class="logo">
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>หน้าแรก</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="flights.html" class="nav-link active">
+                            <i class="fas fa-plane"></i>
+                            <span>เที่ยวบิน</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-<nav class="topup">
-	<img src="pic/logo2.jpg" height="100px" class="ff">
-	<ul class="topL">
-		<!-- <li><a href="#">Hotels</a></li> -->
-		<li><a href="index.html">Home</a></li>
-		<li><a href="flights.html">Flights</a></li>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <a href="login.html" class="btn btn-outline">เข้าสู่ระบบ</a>
+                <a href="reg.html" class="btn btn-primary">สมัครสมาชิก</a>
+            </div>
 
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
-		<!-- <li><a href="#">Cars</a></li> -->
-	</ul>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>เที่ยวบินแนะนำ</h1>
+                <p>เลือกเที่ยวบินที่ใช่สำหรับการเดินทางของคุณ</p>
+            </div>
+        </div>
+    </section>
 
-	<ul class="topR">
-		<header>
-			<div class="shopping">
-				<li><a href="#">
-						<button class="cart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
-								class="TopRegis">
-								<path
-									d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
-							</svg></button>
-						<span class="quantity">0</span>
+    <!-- Search Results -->
+    <section class="search-results">
+        <div class="container">
+            <div class="results-header">
+                <h2>เที่ยวบินที่พบ</h2>
+                <div class="sort-options">
+                    <select id="sort-select">
+                        <option value="price">เรียงตามราคา</option>
+                        <option value="duration">เรียงตามระยะเวลา</option>
+                        <option value="departure">เรียงตามเวลาออกเดินทาง</option>
+                    </select>
+                </div>
+            </div>
 
-					</a></li>
-			</div>
-		</header>
+            <div class="flights-grid" id="flights-grid">
+                <!-- Flights will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
 
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>ตะกร้าสินค้า</h3>
+            <button class="cart-close" id="cart-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-content">
+            <ul class="cart-items" id="cart-items">
+                <!-- Cart items will be populated by JavaScript -->
+            </ul>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>รวม: ฿<span id="cart-total">0</span></span>
+            </div>
+            <button class="btn btn-checkout" id="checkout-btn">ชำระเงิน</button>
+        </div>
+    </div>
 
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cart-overlay"></div>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="./pic/logo2.jpg" alt="EasyTravel" class="footer-logo">
+                    <p>จองตั๋วเครื่องบินออนไลน์ง่ายๆ ในราคาที่ดีที่สุด</p>
+                </div>
+                <div class="footer-section">
+                    <h4>บริการ</h4>
+                    <ul>
+                        <li><a href="flights.html">จองเที่ยวบิน</a></li>
+                        <li><a href="#">ติดตามเที่ยวบิน</a></li>
+                        <li><a href="#">ยกเลิกการจอง</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>ช่วยเหลือ</h4>
+                    <ul>
+                        <li><a href="#">ติดต่อเรา</a></li>
+                        <li><a href="#">คำถามที่พบบ่อย</a></li>
+                        <li><a href="#">นโยบายความเป็นส่วนตัว</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>ติดตามเรา</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EasyTravel. สงวนลิขสิทธิ์.</p>
+            </div>
+        </div>
+    </footer>
 
-
-		<li><a href="login.html"><button class="gg">Sign in</button></a></li>
-		<li><a href="reg.html"><button class="gg">Register</button></a></li>
-
-	</ul>
-</nav>
-
-<body class="Flightss">
-
-	<div class="container">
-		<header class="under">
-			<h1>Flights list</h1>
-			<div class="shopping">
-
-			</div>
-		</header>
-
-		<div class="list">
-
-		</div>
-	</div>
-	<div class="card">
-		<h1>Cart</h1>
-		<ul class="listCard">
-		</ul>
-		<div class="checkOut">
-			<div onclick="checkpay()" class="total">0</div>
-			<div class="closeShopping">Close</div>
-		</div>
-	</div>
-<script src="script.js"></script>
-	
+    <script src="script.js"></script>
 </body>
-
-<!-- <body class="bodyF">
-	
-
-	<main>
-		<section class="secF">
-		  <h2>Select your flights</h2>
-		  <div class="flight-list">
-			<div class="flight-item">
-			  <h3>Flight 1</h3>
-			  <p>Departure: Los Angeles, CA</p>
-			  <p>Destination: New York, NY</p>
-			  <p>Price: $200</p>
-			  <button>Add to Cart</button>
-			</div>
-			<div class="flight-item">
-			  <h3>Flight 2</h3>
-			  <p>Departure: Los Angeles, CA</p>
-			  <p>Destination: New York, NY</p>
-			  <p>Price: $250</p>
-			  <button>Add to Cart</button>
-			</div>
-	  <div  class="flight-item">
-			<h3>Flight 3</h3>
-			<p>Departure: Los Angeles, CA</p>
-			<p>Destination: New York, NY</p>
-			<p>Price: $270</p>
-			<button>Add to Cart</button>
-		  </div>
-		  <div  class="flight-item">
-			<h3>Flight 4</h3>
-			<p>Departure: Los Angeles, CA</p>
-			<p>Destination: New York, NY</p>
-			<p>Price: $300</p>
-			<button>Add to Cart</button>
-		  </div>
-		  
-		  </div>
-  
-		</section>
-   
-	  </main>
-	</body> -->
-
 </html>
