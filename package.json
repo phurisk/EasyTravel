@@ -1,0 +1,26 @@
+{
+  "name": "easy-travel",
+  "version": "1.0.0",
+  "description": "prototype โปรเจค ระบบจองตั๋วเครื่องบินออนไลน์",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'Static site - no build process needed. Files are ready to serve from public directory.'",
+    "start": "echo 'This is a static site. Serve the public directory with any web server.'",
+    "dev": "echo 'For development, serve the public directory with a local web server.'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "travel",
+    "flight-booking",
+    "airline",
+    "booking-system",
+    "thai"
+  ],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "homepage": ""
+}
