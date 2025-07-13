@@ -3,7 +3,7 @@
 
 /* Page Header */
 .page-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background: var(--primary-color);
     color: var(--text-light);
     padding: 120px 0 60px;
     margin-top: 76px;
@@ -118,7 +118,7 @@
 }
 
 .flight-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    background: var(--primary-color);
     color: var(--text-light);
     padding: 20px 24px;
     display: flex;
@@ -354,7 +354,7 @@
 }
 
 .modal-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background: var(--primary-color);
     color: var(--text-light);
     padding: 24px;
     display: flex;

@@ -6,8 +6,8 @@
 }
 
 :root {
-    --primary-color: #0249ae;
-    --primary-dark: #003d8a;
+    --primary-color: #1355b0;
+    --primary-dark: #0f4494;
     --primary-light: #5d8dd1;
     --secondary-color: #48f9ff;
     --accent-color: #0070c9;
@@ -111,14 +111,17 @@ p {
 }
 
 .btn-outline {
-    background: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-light), var(--accent-color));
+    color: var(--text-light);
+    border: none;
+    box-shadow: var(--shadow-light);
 }
 
 .btn-outline:hover {
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
     color: var(--text-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
 }
 
 .btn-search {
@@ -172,7 +175,7 @@ p {
     top: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background: var(--primary-color);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 1000;
