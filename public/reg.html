@@ -1,82 +1,373 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
-    <head>
-        <title>Easy Tralvel</title>
-        <link rel="icon" type="image/x-icon" href="pic/logo.jpg" > 
-        <link rel="stylesheet" type="text/css" href="reg.css">
-    </head>
-    <body>	
-        <nav class="topup" >
-                    <img src="pic/logo2.jpg" height	="100px">
-                <ul class="topL" >
-                    <!-- <li><a href="#">Hotels</a></li> -->
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="flights.html">Flights</a></li>
-                    
-                
-                    <!-- <li><a href="#">Cars</a></li> -->
-                </ul>
-		
-                <ul class="topR">
-                    <header>
-                        <div class="shopping">
-                            <li><a href="#">
-                                    <button class="cart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
-                                            class="TopRegis">
-                                            <path
-                                                d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
-                                        </svg></button>
-                                    <span class="quantity">0</span>
-        
-                                </a></li>
-                        </div>
-                    </header>
-                    <li><a href="login.html"><button class="gg">Sign in</button></a></li>
-                    <li><a href="reg.html"><button class="gg">Register</button></a></li>
-                </ul>
-            </nav>
-	<title>Register</title>
-	<link rel="stylesheet" type="text/css" href="reg.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สมัครสมาชิก - EasyTravel</title>
+    <link rel="icon" type="image/x-icon" href="pic/logo.jpg">
+    <link rel="stylesheet" type="text/css" href="reg.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-	<div class="container">
-		<h1>Register</h1>
-		<form>
-			<label for="username">Username</label>
-			<input type="text" id="username" name="username" required>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="./pic/logo2.jpg" alt="EasyTravel Logo" class="logo">
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>หน้าแรก</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="flights.html" class="nav-link">
+                            <i class="fas fa-plane"></i>
+                            <span>เที่ยวบิน</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-			<label for="email">Email</label>
-			<input type="email" id="email" name="email" required>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <a href="login.html" class="btn btn-outline">เข้าสู่ระบบ</a>
+                <a href="reg.html" class="btn btn-primary active">สมัครสมาชิก</a>
+            </div>
 
-			<label for="password">Password</label>
-			<input type="password" id="password" name="password" required>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
-			<label for="confirm-password">Confirm Password</label>
-			<input type="password" id="confirm-password" name="confirm-password" required>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="register-container">
+            <div class="register-header">
+                <h1>สมัครสมาชิก</h1>
+                <p>เริ่มต้นการเดินทางที่ยอดเยี่ยมกับ EasyTravel</p>
+            </div>
 
-			<input type="submit" value="Register">
-		</form>
-		<div class="login-link">
-			<p>Already have an account? <a href="login.html">Log in</a></p>
-		</div>
-	</div>
-</body>
-<!-- ############################## -->
-<body class="abc">
+            <form class="register-form" id="register-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">
+                            <i class="fas fa-user"></i>
+                            ชื่อ
+                        </label>
+                        <input type="text" id="firstName" name="firstName" placeholder="กรอกชื่อ" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">
+                            <i class="fas fa-user"></i>
+                            นามสกุล
+                        </label>
+                        <input type="text" id="lastName" name="lastName" placeholder="กรอกนามสกุล" required>
+                    </div>
+                </div>
 
-		
-    <div class="carder">
-        <h1>Cart</h1>
-        <ul class="listCard">
-        </ul>
-        <div class="checkOut">
-            <div onclick="checkpay()"  class="total">0</div>
-            <div class="closeShopping">Close</div>
+                <div class="form-group">
+                    <label for="username">
+                        <i class="fas fa-at"></i>
+                        ชื่อผู้ใช้
+                    </label>
+                    <input type="text" id="username" name="username" placeholder="กรอกชื่อผู้ใช้" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">
+                        <i class="fas fa-envelope"></i>
+                        อีเมล
+                    </label>
+                    <input type="email" id="email" name="email" placeholder="กรอกอีเมล" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">
+                        <i class="fas fa-phone"></i>
+                        เบอร์โทรศัพท์
+                    </label>
+                    <input type="tel" id="phone" name="phone" placeholder="กรอกเบอร์โทรศัพท์" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i>
+                        รหัสผ่าน
+                    </label>
+                    <input type="password" id="password" name="password" placeholder="กรอกรหัสผ่าน" required>
+                    <div class="password-strength">
+                        <div class="strength-bar">
+                            <div class="strength-fill" id="strength-fill"></div>
+                        </div>
+                        <div class="strength-text" id="strength-text">ความแข็งแกร่งของรหัสผ่าน</div>
+                    </div>
+                    <div class="password-requirements">
+                        <ul id="password-requirements">
+                            <li id="req-length">
+                                <i class="fas fa-times"></i>
+                                อย่างน้อย 8 ตัวอักษร
+                            </li>
+                            <li id="req-uppercase">
+                                <i class="fas fa-times"></i>
+                                มีตัวอักษรพิมพ์ใหญ่
+                            </li>
+                            <li id="req-lowercase">
+                                <i class="fas fa-times"></i>
+                                มีตัวอักษรพิมพ์เล็ก
+                            </li>
+                            <li id="req-number">
+                                <i class="fas fa-times"></i>
+                                มีตัวเลข
+                            </li>
+                            <li id="req-special">
+                                <i class="fas fa-times"></i>
+                                มีอักขระพิเศษ
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">
+                        <i class="fas fa-lock"></i>
+                        ยืนยันรหัสผ่าน
+                    </label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="ยืนยันรหัสผ่าน" required>
+                </div>
+
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <div class="terms-text">
+                        ฉันยอมรับ <a href="#" target="_blank">ข้อกำหนดการใช้งาน</a> และ 
+                        <a href="#" target="_blank">นโยบายความเป็นส่วนตัว</a> ของ EasyTravel
+                    </div>
+                </div>
+
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <div class="terms-text">
+                        ฉันต้องการรับข่าวสารและโปรโมชั่นพิเศษจาก EasyTravel
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submit-btn" disabled>
+                    <i class="fas fa-user-plus"></i>
+                    สมัครสมาชิก
+                </button>
+            </form>
+
+            <div class="register-footer">
+                <p>มีบัญชีอยู่แล้ว?</p>
+                <a href="login.html">เข้าสู่ระบบเลย</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>ตะกร้าสินค้า</h3>
+            <button class="cart-close" id="cart-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-content">
+            <ul class="cart-items" id="cart-items">
+                <li class="empty-cart">ตะกร้าสินค้าว่าง</li>
+            </ul>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>รวม: ฿<span id="cart-total">0</span></span>
+            </div>
+            <button class="btn-checkout" id="checkout-btn">ชำระเงิน</button>
         </div>
     </div>
 
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
     <script src="index.js"></script>
+    <script>
+        // Password strength checker
+        const passwordInput = document.getElementById('password');
+        const strengthFill = document.getElementById('strength-fill');
+        const strengthText = document.getElementById('strength-text');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        const submitBtn = document.getElementById('submit-btn');
+        const termsCheckbox = document.getElementById('terms');
+
+        const requirements = {
+            length: document.getElementById('req-length'),
+            uppercase: document.getElementById('req-uppercase'),
+            lowercase: document.getElementById('req-lowercase'),
+            number: document.getElementById('req-number'),
+            special: document.getElementById('req-special')
+        };
+
+        function checkPasswordStrength(password) {
+            let score = 0;
+            const checks = {
+                length: password.length >= 8,
+                uppercase: /[A-Z]/.test(password),
+                lowercase: /[a-z]/.test(password),
+                number: /\d/.test(password),
+                special: /[!@#$%^&*(),.?":{}|<>]/.test(password)
+            };
+
+            // Update requirement indicators
+            Object.keys(checks).forEach(key => {
+                const element = requirements[key];
+                const icon = element.querySelector('i');
+                if (checks[key]) {
+                    element.classList.add('valid');
+                    icon.className = 'fas fa-check';
+                    score++;
+                } else {
+                    element.classList.remove('valid');
+                    icon.className = 'fas fa-times';
+                }
+            });
+
+            // Update strength bar
+            const percentage = (score / 5) * 100;
+            strengthFill.style.width = percentage + '%';
+
+            if (score < 2) {
+                strengthFill.className = 'strength-fill strength-weak';
+                strengthText.textContent = 'รหัสผ่านอ่อนแอ';
+            } else if (score < 4) {
+                strengthFill.className = 'strength-fill strength-medium';
+                strengthText.textContent = 'รหัสผ่านปานกลาง';
+            } else {
+                strengthFill.className = 'strength-fill strength-strong';
+                strengthText.textContent = 'รหัสผ่านแข็งแกร่ง';
+            }
+
+            return score >= 4;
+        }
+
+        function validateForm() {
+            const password = passwordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+            const isPasswordStrong = checkPasswordStrength(password);
+            const isPasswordMatch = password === confirmPassword && password.length > 0;
+            const isTermsAccepted = termsCheckbox.checked;
+            const isFormValid = document.getElementById('register-form').checkValidity();
+
+            submitBtn.disabled = !(isPasswordStrong && isPasswordMatch && isTermsAccepted && isFormValid);
+        }
+
+        passwordInput.addEventListener('input', validateForm);
+        confirmPasswordInput.addEventListener('input', validateForm);
+        termsCheckbox.addEventListener('change', validateForm);
+
+        // Form submission
+        document.getElementById('register-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const userData = Object.fromEntries(formData);
+            
+            if (userData.password !== userData.confirmPassword) {
+                showNotification('รหัสผ่านไม่ตรงกัน', 'error');
+                return;
+            }
+
+            // Simulate registration
+            showNotification('กำลังสมัครสมาชิก...', 'info');
+            
+            setTimeout(() => {
+                showNotification('สมัครสมาชิกสำเร็จ!', 'success');
+                
+                // Store user data
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('username', userData.firstName + ' ' + userData.lastName);
+                
+                // Redirect to login page
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 1500);
+            }, 2000);
+        });
+
+        // Notification function
+        function showNotification(message, type = 'info') {
+            const existingNotifications = document.querySelectorAll('.notification');
+            existingNotifications.forEach(n => n.remove());
+
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <i class="fas fa-${getNotificationIcon(type)}"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: ${getNotificationColor(type)};
+                color: white;
+                padding: 16px 24px;
+                border-radius: 12px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+                z-index: 10000;
+                transform: translateX(400px);
+                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                max-width: 300px;
+            `;
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+
+            setTimeout(() => {
+                notification.style.transform = 'translateX(400px)';
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        function getNotificationIcon(type) {
+            const icons = {
+                success: 'check-circle',
+                error: 'exclamation-circle',
+                warning: 'exclamation-triangle',
+                info: 'info-circle'
+            };
+            return icons[type] || 'info-circle';
+        }
+
+        function getNotificationColor(type) {
+            const colors = {
+                success: '#27ae60',
+                error: '#e74c3c',
+                warning: '#f39c12',
+                info: '#3498db'
+            };
+            return colors[type] || '#3498db';
+        }
+
+        // Initial validation
+        validateForm();
+    </script>
 </body>
-<!-- ######################################## -->
 </html>

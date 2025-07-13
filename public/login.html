@@ -1,107 +1,258 @@
 <!DOCTYPE html>
-<html>
-</head>
+<html lang="th">
 <head>
-	<title>Easy Tralvel</title>
-	<link rel="icon" type="image/x-icon" href="pic/logo.jpg" > 
-	<link rel="stylesheet" type="text/css" href="login.css">
-</head>
-<body>	
-	<nav class="topup" >
-				<img src="pic/logo2.jpg" height	="100px">
-			<ul class="topL" >
-				<!-- <li><a href="#">Hotels</a></li> -->
-				<li><a href="index.html">Home</a></li>
-				<li><a href="flights.html">Flights</a></li>
-				
-			
-				<!-- <li><a href="#">Cars</a></li> -->
-			</ul>
-		
-			<ul class="topR">
-				<header>
-					<div class="shopping">
-						<li><a href="#">
-								<button class="cart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
-										class="TopRegis">
-										<path
-											d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
-									</svg></button>
-								<span class="quantity">0</span>
-	
-							</a></li>
-					</div>
-				</header>
-				<li><a href="login.html"><button class="gg">Sign in</button></a></li>
-				<li><a href="reg.html"><button class="gg">Register</button></a></li>
-			</ul>
-		</nav>
-	<title>Sign In</title>
-	<link rel="stylesheet" type="text/css" href="login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าสู่ระบบ - EasyTravel</title>
+    <link rel="icon" type="image/x-icon" href="pic/logo.jpg">
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID">
 </head>
 <body>
-	<div class="container">
-		<h1>Sign In</h1>
-		<form>
-			<label for="username">Username</label>
-			<input type="text" id="username" name="username" required>
-
-			<label for="password">Password</label>
-			<input type="password" id="password" name="password" required>
-
-            <label class="Google">
-                <title>Sign In</title>
-                <link rel="stylesheet" type="text/css" href="login.css">
-                <script src="https://apis.google.com/js/platform.js" async defer></script>
-                <meta name="google-signin-client_id" content="YOUR_CLIENT_ID">
-          
-           
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="./pic/logo2.jpg" alt="EasyTravel Logo" class="logo">
+            </div>
             
-            <div class="gggg">
-                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-             </div>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>หน้าแรก</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="flights.html" class="nav-link">
+                            <i class="fas fa-plane"></i>
+                            <span>เที่ยวบิน</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <a href="login.html" class="btn btn-outline active">เข้าสู่ระบบ</a>
+                <a href="reg.html" class="btn btn-primary">สมัครสมาชิก</a>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>เข้าสู่ระบบ</h1>
+                <p>ยินดีต้อนรับกลับสู่ EasyTravel</p>
+            </div>
+
+            <form class="login-form" id="login-form">
+                <div class="form-group">
+                    <label for="username">
+                        <i class="fas fa-user"></i>
+                        ชื่อผู้ใช้หรืออีเมล
+                    </label>
+                    <input type="text" id="username" name="username" placeholder="กรอกชื่อผู้ใช้หรืออีเมล" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i>
+                        รหัสผ่าน
+                    </label>
+                    <input type="password" id="password" name="password" placeholder="กรอกรหัสผ่าน" required>
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        จดจำการเข้าสู่ระบบ
+                    </label>
+                    <a href="#" class="forgot-password">ลืมรหัสผ่าน?</a>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    เข้าสู่ระบบ
+                </button>
+            </form>
+
+            <div class="divider">หรือ</div>
+
+            <div class="google-signin" onclick="signInWithGoogle()">
+                <svg width="20" height="20" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+                เข้าสู่ระบบด้วย Google
+            </div>
+
+            <div class="login-footer">
+                <p>ยังไม่มีบัญชี?</p>
+                <a href="reg.html">สมัครสมาชิกเลย</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>ตะกร้าสินค้า</h3>
+            <button class="cart-close" id="cart-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-content">
+            <ul class="cart-items" id="cart-items">
+                <li class="empty-cart">ตะกร้าสินค้าว่าง</li>
+            </ul>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>รวม: ฿<span id="cart-total">0</span></span>
+            </div>
+            <button class="btn-checkout" id="checkout-btn">ชำระเงิน</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <script src="index.js"></script>
+    <script>
+        // Login form handling
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-                <script>
-                    function onSignIn(googleUser) {
-                        var profile = googleUser.getBasicProfile();
-                        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-                        console.log('Name: ' + profile.getName());
-                        console.log('Image URL: ' + profile.getImageUrl());
-                        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-                    }
-                </script>
-            </label>
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username && password) {
+                // Simulate login success
+                showNotification('เข้าสู่ระบบสำเร็จ!', 'success');
+                
+                // Store login state
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('username', username);
+                
+                // Redirect to home page after delay
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1500);
+            } else {
+                showNotification('กรุณากรอกข้อมูลให้ครบถ้วน', 'warning');
+            }
+        });
 
-			<div class="forgot-password">
-				<a href="#">Forgot Password?</a>
-			</div>
+        // Google Sign In
+        function signInWithGoogle() {
+            showNotification('กำลังเชื่อมต่อกับ Google...', 'info');
+            // Simulate Google sign in
+            setTimeout(() => {
+                showNotification('เข้าสู่ระบบด้วย Google สำเร็จ!', 'success');
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('username', 'Google User');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1500);
+            }, 2000);
+        }
 
-			<input type="submit" value="Sign In">
-		</form>
-	</div>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId());
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+            
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('username', profile.getName());
+            showNotification('เข้าสู่ระบบสำเร็จ!', 'success');
+            
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1500);
+        }
+
+        // Notification function
+        function showNotification(message, type = 'info') {
+            const existingNotifications = document.querySelectorAll('.notification');
+            existingNotifications.forEach(n => n.remove());
+
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <i class="fas fa-${getNotificationIcon(type)}"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: ${getNotificationColor(type)};
+                color: white;
+                padding: 16px 24px;
+                border-radius: 12px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+                z-index: 10000;
+                transform: translateX(400px);
+                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                max-width: 300px;
+            `;
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+
+            setTimeout(() => {
+                notification.style.transform = 'translateX(400px)';
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        function getNotificationIcon(type) {
+            const icons = {
+                success: 'check-circle',
+                error: 'exclamation-circle',
+                warning: 'exclamation-triangle',
+                info: 'info-circle'
+            };
+            return icons[type] || 'info-circle';
+        }
+
+        function getNotificationColor(type) {
+            const colors = {
+                success: '#27ae60',
+                error: '#e74c3c',
+                warning: '#f39c12',
+                info: '#3498db'
+            };
+            return colors[type] || '#3498db';
+        }
+    </script>
 </body>
-<body class="abc">
-
-		
-	<div class="carder">
-		<h1>Cart</h1>
-		<ul class="listCard">
-		</ul>
-		<div class="checkOut">
-			<div onclick="checkpay()" class="total">0</div>
-			<div class="closeShopping">Close</div>
-		</div>
-	</div>
-
-	<script src="index.js"></script>
-</body>
-
-
 </html>
-
-
-
-
-
-
-

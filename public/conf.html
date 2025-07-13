@@ -1,94 +1,310 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
-	<title>Payment Confirmation</title>
-	<link rel="icon" type="image/x-icon" href="pic/logo.jpg" > 
-	<link rel="stylesheet" type="text/css" href="conf.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ยืนยันการชำระเงิน - EasyTravel</title>
+    <link rel="icon" type="image/x-icon" href="pic/logo.jpg">
+    <link rel="stylesheet" type="text/css" href="conf.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>	
-    <nav class="topup" >
-                <img src="pic/logo2.jpg" height	="100px">
-            <ul class="topL" >
-                <!-- <li><a href="#">Hotels</a></li> -->
-                <li><a href="index.html">Home</a></li>
-                <li><a href="flights.html">Flights</a></li>
-                
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="./pic/logo2.jpg" alt="EasyTravel Logo" class="logo">
+            </div>
             
-                <!-- <li><a href="#">Cars</a></li> -->
-            </ul>
-    
-            <ul class="topR">
-                <header>
-                    <div class="shopping">
-                        <li><a href="#">
-                                <button class="cart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
-                                        class="TopRegis">
-                                        <path
-                                            d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
-                                    </svg></button>
-                                <span class="quantity">0</span>
-    
-                            </a></li>
-                    </div>
-                </header>
-                <li><a href="login.html"><button class="gg">Sign in</button></a></li>
-                <li><a href="reg.html"><button class="gg">Register</button></a></li>
-            </ul>
-        </nav>
-<!-- ####################################################### -->
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>หน้าแรก</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="flights.html" class="nav-link">
+                            <i class="fas fa-plane"></i>
+                            <span>เที่ยวบิน</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-<body class="abc">
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <a href="login.html" class="btn btn-outline">เข้าสู่ระบบ</a>
+                <a href="reg.html" class="btn btn-primary">สมัครสมาชิก</a>
+            </div>
 
-		
-    <div class="carder">
-        <h1>Cart</h1>
-        <ul class="listCard">
-        </ul>
-        <div class="checkOut">
-            <div onclick="checkpay()"  class="total">0</div>
-            <div class="closeShopping">Close</div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="confirmation-container">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            
+            <div class="confirmation-header">
+                <h1>ชำระเงินสำเร็จ!</h1>
+                <p>ขอบคุณที่ใช้บริการ EasyTravel การทำรายการของคุณเสร็จสมบูรณ์แล้ว</p>
+            </div>
+
+            <div class="transaction-details" id="transaction-details">
+                <!-- Transaction details will be populated by JavaScript -->
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-receipt" onclick="openReceiptModal()">
+                    <i class="fas fa-receipt"></i>
+                    ดูใบเสร็จ
+                </button>
+                <a href="index.html" class="btn btn-home">
+                    <i class="fas fa-home"></i>
+                    กลับหน้าแรก
+                </a>
+            </div>
+
+            <div class="additional-info">
+                <h3>
+                    <i class="fas fa-info-circle"></i>
+                    ข้อมูลสำคัญ
+                </h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        อีเมลยืนยันจะถูกส่งไปยังอีเมลของคุณภายใน 5 นาที
+                    </li>
+                    <li>
+                        <i class="fas fa-mobile-alt"></i>
+                        SMS ยืนยันจะถูกส่งไปยังเบอร์โทรศัพท์ของคุณ
+                    </li>
+                    <li>
+                        <i class="fas fa-calendar-check"></i>
+                        สามารถยกเลิกการจองได้ฟรีภายใน 24 ชั่วโมง
+                    </li>
+                    <li>
+                        <i class="fas fa-headset"></i>
+                        ติดต่อฝ่ายบริการลูกค้า 24/7 หากมีข้อสงสัย
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Receipt Modal -->
+    <div id="receiptModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>ใบเสร็จรับเงิน</h2>
+                <button class="close-button" onclick="closeReceiptModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="receipt-content" id="receipt-content">
+                <!-- Receipt content will be populated by JavaScript -->
+            </div>
         </div>
     </div>
 
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>ตะกร้าสินค้า</h3>
+            <button class="cart-close" id="cart-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-content">
+            <ul class="cart-items" id="cart-items">
+                <li class="empty-cart">ตะกร้าสินค้าว่าง</li>
+            </ul>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>รวม: ฿<span id="cart-total">0</span></span>
+            </div>
+            <button class="btn-checkout" id="checkout-btn">ชำระเงิน</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
     <script src="index.js"></script>
-</body>
+    <script>
+        // Load transaction data and display confirmation
+        document.addEventListener('DOMContentLoaded', function() {
+            loadTransactionData();
+            generateReceipt();
+        });
 
+        function loadTransactionData() {
+            const transactionId = localStorage.getItem('transactionId') || 'TXN' + Date.now();
+            const paymentAmount = localStorage.getItem('paymentAmount') || '0';
+            const currentDate = new Date().toLocaleDateString('th-TH', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
 
+            const transactionDetails = document.getElementById('transaction-details');
+            
+            transactionDetails.innerHTML = `
+                <div class="detail-row">
+                    <span>หมายเลขการทำรายการ:</span>
+                    <span>${transactionId}</span>
+                </div>
+                <div class="detail-row">
+                    <span>วันที่ทำรายการ:</span>
+                    <span>${currentDate}</span>
+                </div>
+                <div class="detail-row">
+                    <span>วิธีการชำระเงิน:</span>
+                    <span>บัตรเครดิต</span>
+                </div>
+                <div class="detail-row">
+                    <span>สถานะ:</span>
+                    <span style="color: var(--success-color);">สำเร็จ</span>
+                </div>
+                <div class="detail-row">
+                    <span>จำนวนเงินรวม:</span>
+                    <span>฿${paymentAmount}</span>
+                </div>
+            `;
+        }
 
-<!-- #################################################### -->
-<body>
-	<div class="containerCON">
-		<h1>Payment Confirmation</h1>
-		<p>Thank you for your payment! Your transaction has been processed successfully.</p>
-		<p>Transaction ID: <strong>10000324486</strong></p>
-		<p>Amount: <strong>$3540.00</strong></p>
-		<p>Payment Method: <strong>Credit Card</strong></p>
-		<button class="button" onclick="openModal()">Print Receipt</button>
+        function generateReceipt() {
+            const transactionId = localStorage.getItem('transactionId') || 'TXN' + Date.now();
+            const paymentAmount = localStorage.getItem('paymentAmount') || '0';
+            const currentDate = new Date().toLocaleDateString('th-TH', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
 
+            const receiptContent = document.getElementById('receipt-content');
+            
+            receiptContent.innerHTML = `
+                <div class="receipt-header">
+                    <img src="./pic/logo2.jpg" alt="EasyTravel Logo">
+                    <h3>EasyTravel Co., Ltd.</h3>
+                    <p>ใบเสร็จรับเงิน / Receipt</p>
+                    <p>เลขที่: ${transactionId}</p>
+                </div>
 
+                <div class="receipt-details">
+                    <div class="receipt-row">
+                        <span>วันที่:</span>
+                        <span>${currentDate}</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span>ลูกค้า:</span>
+                        <span>ลูกค้า EasyTravel</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span>รายการ:</span>
+                        <span>บริการจองตั๋วเครื่องบิน</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span>ยอดรวมก่อนภาษี:</span>
+                        <span>฿${(parseFloat(paymentAmount.replace(/,/g, '')) / 1.07).toFixed(2)}</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span>ภาษีมูลค่าเพิ่ม 7%:</span>
+                        <span>฿${(parseFloat(paymentAmount.replace(/,/g, '')) * 0.07 / 1.07).toFixed(2)}</span>
+                    </div>
+                    <div class="receipt-row">
+                        <span>ยอดรวมทั้งสิ้น:</span>
+                        <span>฿${paymentAmount}</span>
+                    </div>
+                </div>
 
-	</div>
+                <div class="receipt-footer">
+                    <p>ขอบคุณที่ใช้บริการ EasyTravel</p>
+                    <p>โทร: 02-123-4567 | อีเมล: support@easytravel.com</p>
+                    <p>เว็บไซต์: www.easytravel.com</p>
+                </div>
+            `;
+        }
 
+        function openReceiptModal() {
+            document.getElementById('receiptModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
 
+        function closeReceiptModal() {
+            document.getElementById('receiptModal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
 
-	<div id="myModal" class="modal">
-		<div class="modal-content">
-			<span class="close-button" onclick="closeModal()">&times;</span>
-			<img class="pho" src="./pic/rep.png" alt="Photo">
-		</div>
-	</div>
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('receiptModal');
+            if (event.target === modal) {
+                closeReceiptModal();
+            }
+        });
 
-	<script>
-		function openModal() {
-			document.getElementById("myModal").style.display = "block";
-		}
+        // Print receipt function
+        function printReceipt() {
+            const receiptContent = document.getElementById('receipt-content').innerHTML;
+            const printWindow = window.open('', '_blank');
+            
+            printWindow.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>ใบเสร็จ - EasyTravel</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; margin: 20px; }
+                        .receipt-header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #0249ae; padding-bottom: 20px; }
+                        .receipt-header img { height: 60px; margin-bottom: 10px; }
+                        .receipt-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; }
+                        .receipt-row:last-child { border-bottom: 2px solid #0249ae; font-weight: bold; margin-top: 15px; padding-top: 15px; }
+                        .receipt-footer { text-align: center; margin-top: 30px; color: #666; font-size: 14px; }
+                    </style>
+                </head>
+                <body>
+                    ${receiptContent}
+                </body>
+                </html>
+            `);
+            
+            printWindow.document.close();
+            printWindow.print();
+        }
 
-		function closeModal() {
-			document.getElementById("myModal").style.display = "none";
-		}
-	</script>
+        // Add print button to receipt modal
+        document.querySelector('.modal-header').insertAdjacentHTML('beforeend', `
+            <button class="btn btn-primary" onclick="printReceipt()" style="margin-left: 16px;">
+                <i class="fas fa-print"></i>
+                พิมพ์
+            </button>
+        `);
 
-</html>
-
+        // Clear transaction data after 5 minutes (optional)
+        setTimeout(() => {
+            localStorage.removeItem('transactionId');
+            localStorage.removeItem('paymentAmount');
+        }, 300000); // 5 minutes
+    </script>
 </body>
 </html>

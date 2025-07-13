@@ -1,137 +1,482 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="payment.css">
-	<title>Easy Tralvel</title>
-	<link rel="icon" type="image/x-icon" href="pic/logo.jpg" > 
+    <title>ชำระเงิน - EasyTravel</title>
+    <link rel="icon" type="image/x-icon" href="pic/logo.jpg">
+    <link rel="stylesheet" type="text/css" href="payment.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<!-- ################################### -->
-<nav class="topup">
-	<img src="pic/logo2.jpg" height="100px" class="ff">
-	<ul class="topL">
-		<!-- <li><a href="#">Hotels</a></li> -->
-		<li><a href="index.html">Home</a></li>
-		<li><a href="flights.html">Flights</a></li>
-
-
-		<!-- <li><a href="#">Cars</a></li> -->
-	</ul>
-
-	<ul class="topR">
-		<header>
-			<div class="shopping">
-				<li><a href="#">
-						<button class="cart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
-								class="TopRegis">
-								<path
-									d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
-							</svg></button>
-						<span class="quantity">0</span>
-
-					</a></li>
-			</div>
-		</header>
-
-
-
-
-
-		<li><a href="login.html"><button class="gg">Sign in</button></a></li>
-		<li><a href="reg.html"><button class="gg">Register</button></a></li>
-
-	</ul>
-</nav>
-<!-- ################################### -->
 <body>
-
-<div class="container">
-
-    <form action="conf.html">
-
-        <div class="row">
-
-            <div class="col">
-
-                <h3 class="title">billing address</h3>
-
-                <div class="inputBox">
-                    <span>full name :</span>
-                    <input type="text" placeholder="john deo">
-                </div>
-                <div class="inputBox">
-                    <span>email :</span>
-                    <input type="email" placeholder="example@example.com">
-                </div>
-                <div class="inputBox">
-                    <span>address :</span>
-                    <input type="text" placeholder="room - street - locality">
-                </div>
-                <div class="inputBox">
-                    <span>city :</span>
-                    <input type="text" placeholder="mumbai">
-                </div>
-
-                <div class="flex">
-                    <div class="inputBox">
-                        <span>state :</span>
-                        <input type="text" placeholder="india">
-                    </div>
-                    <div class="inputBox">
-                        <span>zip code :</span>
-                        <input type="text" placeholder="123 456">
-                    </div>
-                </div>
-
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="./pic/logo2.jpg" alt="EasyTravel Logo" class="logo">
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>หน้าแรก</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="flights.html" class="nav-link">
+                            <i class="fas fa-plane"></i>
+                            <span>เที่ยวบิน</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
 
-            <div class="col">
-
-                <h3 class="title">payment</h3>
-
-                <div class="inputBox">
-                    <span>cards accepted :</span>
-                    <img src="images/card_img.png" alt="">
-                </div>
-                <div class="inputBox">
-                    <span>name on card :</span>
-                    <input type="text" placeholder="mr. john deo">
-                </div>
-                <div class="inputBox">
-                    <span>credit card number :</span>
-                    <input type="number" placeholder="1111-2222-3333-4444">
-                </div>
-                <div class="inputBox">
-                    <span>exp month :</span>
-                    <input type="text" placeholder="january">
-                </div>
-
-                <div class="flex">
-                    <div class="inputBox">
-                        <span>exp year :</span>
-                        <input type="number" placeholder="2022">
-                    </div>
-                    <div class="inputBox">
-                        <span>CVV :</span>
-                        <input type="text" placeholder="1234">
-                    </div>
-                </div>
-
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <a href="login.html" class="btn btn-outline">เข้าสู่ระบบ</a>
+                <a href="reg.html" class="btn btn-primary">สมัครสมาชิก</a>
             </div>
-    
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
+    </nav>
 
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="payment-container">
+            <!-- Billing Information -->
+            <div class="payment-section">
+                <h2 class="section-title">
+                    <i class="fas fa-user"></i>
+                    ข้อมูลการเรียกเก็บเงิน
+                </h2>
 
-       <a  href="conf.html"><button class="submit-btn">
-        proceed to checkout</button></a>
+                <form id="payment-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">
+                                <i class="fas fa-user"></i>
+                                ชื่อ
+                            </label>
+                            <input type="text" id="firstName" name="firstName" placeholder="กรอกชื่อ" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">
+                                <i class="fas fa-user"></i>
+                                นามสกุล
+                            </label>
+                            <input type="text" id="lastName" name="lastName" placeholder="กรอกนามสกุล" required>
+                        </div>
+                    </div>
 
-    </form>
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i>
+                            อีเมล
+                        </label>
+                        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                    </div>
 
-</div>    
+                    <div class="form-group">
+                        <label for="phone">
+                            <i class="fas fa-phone"></i>
+                            เบอร์โทรศัพท์
+                        </label>
+                        <input type="tel" id="phone" name="phone" placeholder="0xx-xxx-xxxx" required>
+                    </div>
 
+                    <div class="form-group">
+                        <label for="address">
+                            <i class="fas fa-map-marker-alt"></i>
+                            ที่อยู่
+                        </label>
+                        <input type="text" id="address" name="address" placeholder="บ้านเลขที่ ถนน ตำบล" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">
+                                <i class="fas fa-city"></i>
+                                จังหวัด
+                            </label>
+                            <input type="text" id="city" name="city" placeholder="จังหวัด" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode">
+                                <i class="fas fa-mail-bulk"></i>
+                                รหัสไปรษณีย์
+                            </label>
+                            <input type="text" id="zipCode" name="zipCode" placeholder="12345" required>
+                        </div>
+                    </div>
+
+                    <h3 class="section-title">
+                        <i class="fas fa-credit-card"></i>
+                        วิธีการชำระเงิน
+                    </h3>
+
+                    <div class="payment-methods">
+                        <div class="payment-method active" data-method="credit-card">
+                            <i class="fas fa-credit-card"></i>
+                            <span>บัตรเครดิต</span>
+                        </div>
+                        <div class="payment-method" data-method="debit-card">
+                            <i class="fas fa-money-check-alt"></i>
+                            <span>บัตรเดบิต</span>
+                        </div>
+                        <div class="payment-method" data-method="bank-transfer">
+                            <i class="fas fa-university"></i>
+                            <span>โอนธนาคาร</span>
+                        </div>
+                        <div class="payment-method" data-method="e-wallet">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>E-Wallet</span>
+                        </div>
+                    </div>
+
+                    <div id="card-details">
+                        <div class="form-group">
+                            <label for="cardNumber">
+                                <i class="fas fa-credit-card"></i>
+                                หมายเลขบัตร
+                            </label>
+                            <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                            <div class="card-icons">
+                                <div class="card-icon visa">VISA</div>
+                                <div class="card-icon mastercard">MC</div>
+                                <div class="card-icon amex">AMEX</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cardName">
+                                <i class="fas fa-user"></i>
+                                ชื่อบนบัตร
+                            </label>
+                            <input type="text" id="cardName" name="cardName" placeholder="ชื่อตามบัตร" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiry">
+                                    <i class="fas fa-calendar"></i>
+                                    วันหมดอายุ
+                                </label>
+                                <input type="text" id="expiry" name="expiry" placeholder="MM/YY" maxlength="5" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">
+                                    <i class="fas fa-lock"></i>
+                                    CVV
+                                </label>
+                                <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="security-info">
+                        <h4>
+                            <i class="fas fa-shield-alt"></i>
+                            ความปลอดภัย
+                        </h4>
+                        <p>ข้อมูลการชำระเงินของคุณได้รับการเข้ารหัสและปกป้องด้วยมาตรฐาน SSL 256-bit เพื่อความปลอดภัยสูงสุด</p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="payment-section">
+                <h2 class="section-title">
+                    <i class="fas fa-receipt"></i>
+                    สรุปการสั่งซื้อ
+                </h2>
+
+                <div class="order-summary" id="order-summary">
+                    <!-- Order items will be populated by JavaScript -->
+                </div>
+
+                <div class="promo-code">
+                    <input type="text" class="promo-input" placeholder="รหัสส่วนลด" id="promo-input">
+                    <button type="button" class="promo-btn" id="apply-promo">ใช้</button>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submit-payment" form="payment-form">
+                    <i class="fas fa-lock"></i>
+                    ชำระเงิน ฿<span id="final-total">0</span>
+                </button>
+
+                <div class="security-info">
+                    <h4>
+                        <i class="fas fa-check-circle"></i>
+                        การันตี
+                    </h4>
+                    <p>• ยกเลิกฟรีภายใน 24 ชั่วโมง<br>
+                       • รับประกันราคาดีที่สุด<br>
+                       • บริการลูกค้า 24/7</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>ตะกร้าสินค้า</h3>
+            <button class="cart-close" id="cart-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-content">
+            <ul class="cart-items" id="cart-items">
+                <li class="empty-cart">ตะกร้าสินค้าว่าง</li>
+            </ul>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>รวม: ฿<span id="cart-total">0</span></span>
+            </div>
+            <button class="btn-checkout" id="checkout-btn">ชำระเงิน</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <script src="index.js"></script>
+    <script>
+        // Payment form handling
+        document.addEventListener('DOMContentLoaded', function() {
+            loadOrderSummary();
+            setupPaymentMethods();
+            setupCardFormatting();
+            setupFormValidation();
+        });
+
+        function loadOrderSummary() {
+            const checkoutItems = JSON.parse(localStorage.getItem('checkoutItems')) || [];
+            const orderSummary = document.getElementById('order-summary');
+            const finalTotal = document.getElementById('final-total');
+            
+            if (checkoutItems.length === 0) {
+                orderSummary.innerHTML = '<p style="color: rgba(255,255,255,0.7); text-align: center;">ไม่มีสินค้าในตะกร้า</p>';
+                finalTotal.textContent = '0';
+                return;
+            }
+
+            let subtotal = 0;
+            let summaryHTML = '';
+
+            checkoutItems.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                
+                summaryHTML += `
+                    <div class="summary-item">
+                        <span>${item.name} x${item.quantity}</span>
+                        <span>฿${itemTotal.toLocaleString()}</span>
+                    </div>
+                `;
+            });
+
+            const tax = Math.round(subtotal * 0.07);
+            const serviceFee = 100;
+            const total = subtotal + tax + serviceFee;
+
+            summaryHTML += `
+                <div class="summary-item">
+                    <span>ยอดรวม</span>
+                    <span>฿${subtotal.toLocaleString()}</span>
+                </div>
+                <div class="summary-item">
+                    <span>ภาษี (7%)</span>
+                    <span>฿${tax.toLocaleString()}</span>
+                </div>
+                <div class="summary-item">
+                    <span>ค่าบริการ</span>
+                    <span>฿${serviceFee.toLocaleString()}</span>
+                </div>
+                <div class="summary-item">
+                    <span>รวมทั้งสิ้น</span>
+                    <span>฿${total.toLocaleString()}</span>
+                </div>
+            `;
+
+            orderSummary.innerHTML = summaryHTML;
+            finalTotal.textContent = total.toLocaleString();
+        }
+
+        function setupPaymentMethods() {
+            const methods = document.querySelectorAll('.payment-method');
+            const cardDetails = document.getElementById('card-details');
+
+            methods.forEach(method => {
+                method.addEventListener('click', function() {
+                    methods.forEach(m => m.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const methodType = this.dataset.method;
+                    if (methodType === 'credit-card' || methodType === 'debit-card') {
+                        cardDetails.style.display = 'block';
+                    } else {
+                        cardDetails.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        function setupCardFormatting() {
+            const cardNumber = document.getElementById('cardNumber');
+            const expiry = document.getElementById('expiry');
+            const cvv = document.getElementById('cvv');
+
+            // Format card number
+            cardNumber.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\s/g, '').replace(/[^0-9]/gi, '');
+                let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+                e.target.value = formattedValue;
+            });
+
+            // Format expiry date
+            expiry.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length >= 2) {
+                    value = value.substring(0, 2) + '/' + value.substring(2, 4);
+                }
+                e.target.value = value;
+            });
+
+            // CVV numbers only
+            cvv.addEventListener('input', function(e) {
+                e.target.value = e.target.value.replace(/[^0-9]/g, '');
+            });
+        }
+
+        function setupFormValidation() {
+            const form = document.getElementById('payment-form');
+            const submitBtn = document.getElementById('submit-payment');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (!form.checkValidity()) {
+                    showNotification('กรุณากรอกข้อมูลให้ครบถ้วน', 'warning');
+                    return;
+                }
+
+                // Show loading state
+                submitBtn.innerHTML = '<div class="loading"></div> กำลังประมวลผล...';
+                submitBtn.disabled = true;
+
+                // Simulate payment processing
+                setTimeout(() => {
+                    // Generate transaction ID
+                    const transactionId = 'TXN' + Date.now();
+                    
+                    // Store transaction data
+                    localStorage.setItem('transactionId', transactionId);
+                    localStorage.setItem('paymentAmount', document.getElementById('final-total').textContent);
+                    
+                    // Clear cart
+                    localStorage.removeItem('checkoutItems');
+                    localStorage.removeItem('cart');
+                    localStorage.removeItem('flightCart');
+                    
+                    showNotification('ชำระเงินสำเร็จ!', 'success');
+                    
+                    // Redirect to confirmation page
+                    setTimeout(() => {
+                        window.location.href = 'conf.html';
+                    }, 1500);
+                }, 3000);
+            });
+
+            // Promo code
+            document.getElementById('apply-promo').addEventListener('click', function() {
+                const promoCode = document.getElementById('promo-input').value.trim();
+                
+                if (promoCode === 'SAVE10') {
+                    showNotification('ใช้รหัสส่วนลดสำเร็จ! ลด 10%', 'success');
+                    // Apply discount logic here
+                } else if (promoCode) {
+                    showNotification('รหัสส่วนลดไม่ถูกต้อง', 'error');
+                } else {
+                    showNotification('กรุณากรอกรหัสส่วนลด', 'warning');
+                }
+            });
+        }
+
+        // Notification function
+        function showNotification(message, type = 'info') {
+            const existingNotifications = document.querySelectorAll('.notification');
+            existingNotifications.forEach(n => n.remove());
+
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <i class="fas fa-${getNotificationIcon(type)}"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: ${getNotificationColor(type)};
+                color: white;
+                padding: 16px 24px;
+                border-radius: 12px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+                z-index: 10000;
+                transform: translateX(400px);
+                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                max-width: 300px;
+            `;
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+
+            setTimeout(() => {
+                notification.style.transform = 'translateX(400px)';
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        function getNotificationIcon(type) {
+            const icons = {
+                success: 'check-circle',
+                error: 'exclamation-circle',
+                warning: 'exclamation-triangle',
+                info: 'info-circle'
+            };
+            return icons[type] || 'info-circle';
+        }
+
+        function getNotificationColor(type) {
+            const colors = {
+                success: '#27ae60',
+                error: '#e74c3c',
+                warning: '#f39c12',
+                info: '#3498db'
+            };
+            return colors[type] || '#3498db';
+        }
+    </script>
 </body>
 </html>
