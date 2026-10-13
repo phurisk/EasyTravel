@@ -501,6 +501,8 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .page-header { background: linear-gradient(120deg, var(--primary-dark), var(--primary-color)); }
+    .search-results { padding: 72px 0 96px; }
     .results-header {
         flex-direction: column;
         align-items: stretch;
