@@ -57,6 +57,4 @@ server.listen(port, '0.0.0.0', () => {
 
 process.on('SIGTERM', () => server.close(() => process.exit(0)))
 process.on('SIGINT', () => server.close(() => process.exit(0)))
-EOF
-
 // This intentionally uses Node's built-in modules so the static preview works without adding runtime dependencies.
