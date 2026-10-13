@@ -8,11 +8,11 @@
 }
 
 :root {
-    --primary-color: #0757b8;
-    --primary-dark: #064596;
-    --primary-light: #4f88d1;
+    --primary-color: #0b56b6;
+    --primary-dark: #08458f;
+    --primary-light: #3b78c8;
     --secondary-color: #dff5ff;
-    --accent-color: #0a70c9;
+    --accent-color: #1768c4;
     --success-color: #27ae60;
     --warning-color: #f39c12;
     --error-color: #e74c3c;
@@ -40,7 +40,7 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
-    background: linear-gradient(135deg, #0757b8 0%, #0a70c9 100%);
+    background: linear-gradient(135deg, #0b56b6 0%, #1768c4 100%);
     min-height: 100vh;
     overflow-x: hidden;
 }
